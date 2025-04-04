@@ -15,7 +15,7 @@ body{
     justify-content: center;
     border: solid 4px rgb(48, 48, 48);
     border-radius: 5px;
-    transform: scale(2.5); 
+    transform: scale(2); 
     transform-origin: center; 
     overflow: hidden;
 }
@@ -26,12 +26,12 @@ body{
     border-radius: 5px;
     border: 1px solid black;
     height: 3em;
-    font-size: 1em;
+    font-size: 0.75em;
     color: rgb(49, 49, 49);
     font-weight: bold;
     text-indent: 0.5em;
-    width: 10vw;
-    
+    box-sizing: border-box;
+    width: 95%;
 }
 
 
