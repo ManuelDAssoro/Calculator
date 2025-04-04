@@ -2,16 +2,21 @@ body{
     flex-direction: column;
     display: flex;
     height: 100vh;
+    width: 98%;
+    justify-content:flex-start;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.733);
 }
 
 #container{
+    margin-top: 12vh;
     justify-content: center;                
     background-color: #585568;
-    max-width: 200px;
     justify-content: center;
     border: solid 4px rgb(48, 48, 48);
-    border-radius: 5px
+    border-radius: 5px;
+    transform: scale(2); 
+    transform-origin: center; 
 }
 
 #display{
@@ -20,7 +25,12 @@ body{
     border-radius: 5px;
     border: 1px solid black;
     height: 2em;
+    font-size: 1em;
+    color: rgb(49, 49, 49);
+    font-weight: bold;
+    text-indent: 0.5em;
 }
+
 
 #buttonsMenu{
     justify-content: center;
@@ -33,7 +43,6 @@ body{
 }
 
 #buttonsMenu button{
-    max-width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,14 +50,20 @@ body{
     border: none;
     margin: 3px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-#operator {
+.operator {
     background-color: rgba(75,74,82,255);
     color: white;
 }
 
-#clear{
+#equalButton{
+    background-color: rgba(75,74,82,255);
+    color: white;
+}
+
+#clear{ 
     background-color: rgba(216,156,182,255);
     color: white;
 }
