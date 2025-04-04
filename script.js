@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let firstNumber = 0;
     let secondNumber = 0;
     let operator = "";
+    
     // add event listeners to the buttons
     // when a button is clicked, add the value to the display
     buttons.forEach((button) => {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             display.innerHTML += button.innerHTML;
         });
     });
+
     // when the clear button is clicked, clear the display and the variables
     clearButton.addEventListener("click", (event) => {
         display.innerHTML = "";

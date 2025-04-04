@@ -1,7 +1,7 @@
 body{
     flex-direction: column;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 98%;
     justify-content:flex-start;
     align-items: center;
@@ -70,3 +70,22 @@ body{
     background-color: rgba(216,156,182,255);
     color: white;
 }
+
+footer{  
+    margin-top: 20vh;
+    color: white;
+    text-align: center;
+    font-weight: bold; 
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+a:visited { 
+    color:white;
+}  
