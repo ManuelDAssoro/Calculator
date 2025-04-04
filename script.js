@@ -16,9 +16,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
             display.innerHTML += button.innerHTML;
         });
     });
-    // when the clear button is clicked, clear the display
+    // when the clear button is clicked, clear the display and the variables
     clearButton.addEventListener("click", (event) => {
         display.innerHTML = "";
+        firstNumber = 0;
+        secondNumber = 0;
+        operator = "";
     });
     // when an operator button is clicked, get the first number and the operator
     operatorButtons.forEach((operatorButton) => {    
@@ -30,13 +33,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // when the equal button is clicked, get the second number and call the operate function
     equalButton.addEventListener("click", (event) => {
         secondNumber = Number(display.innerHTML.slice(firstNumber.toString().length + 1, -1));                  
-            display.innerHTML = operate(firstNumber, operator, secondNumber);
+            display.innerHTML = operate(firstNumber, operator, secondNumber, display);
     })
 });
 
 
 
-function operate (firstNumber, operator, secondNumber) {
+function operate (firstNumber, operator, secondNumber, display) {
     switch (operator) {
         case '+':
             return firstNumber + secondNumber;
@@ -47,8 +50,14 @@ function operate (firstNumber, operator, secondNumber) {
         case 'x':
             return firstNumber * secondNumber;
             break;
-        case '%':
-            return firstNumber / secondNumber;
+        case '÷':
+            if(secondNumber == 0){
+                return "Division by 0 is undefined!";
+            }
+            else{
+                return firstNumber / secondNumber;
+            }
+                
             break;
     }
 }

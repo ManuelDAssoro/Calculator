@@ -9,14 +9,15 @@ body{
 }
 
 #container{
-    margin-top: 12vh;
+    margin-top: 20vh;
     justify-content: center;                
     background-color: #585568;
     justify-content: center;
     border: solid 4px rgb(48, 48, 48);
     border-radius: 5px;
-    transform: scale(2); 
+    transform: scale(2.5); 
     transform-origin: center; 
+    overflow: hidden;
 }
 
 #display{
@@ -24,11 +25,13 @@ body{
     background-color: #83bba6ab;
     border-radius: 5px;
     border: 1px solid black;
-    height: 2em;
+    height: 3em;
     font-size: 1em;
     color: rgb(49, 49, 49);
     font-weight: bold;
     text-indent: 0.5em;
+    width: 10vw;
+    
 }
 
 
