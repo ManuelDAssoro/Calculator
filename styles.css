@@ -5,15 +5,15 @@ body{
     width: 98%;
     justify-content:flex-start;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.733);
+    background-color: rgb(0, 0, 0);
 }
 
 #container{
     margin-top: 20vh;
     justify-content: center;                
-    background-color: #585568;
+    background-color: rgba(71,77,80,255);
     justify-content: center;
-    border: solid 4px rgb(48, 48, 48);
+    border: solid 4px rgba(124,115,102,255);
     border-radius: 5px;
     transform: scale(2); 
     transform-origin: center; 
@@ -22,9 +22,9 @@ body{
 
 #display{
     margin: 3px;
-    background-color: #83bba6ab;
+    background-color: rgba(63,97,89,255);
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(40, 40, 40);
     height: 3em;
     font-size: 0.75em;
     color: rgb(49, 49, 49);
@@ -56,18 +56,23 @@ body{
     cursor: pointer;
 }
 
+.numberButton{
+    background-color: rgba(43,42,51,255);
+    color: white;
+}
+
 .operator {
-    background-color: rgba(75,74,82,255);
+    background-color: rgba(59,64,66,255);
     color: white;
 }
 
 #equalButton{
-    background-color: rgba(75,74,82,255);
+    background-color: rgba(59,64,66,255);   
     color: white;
 }
 
 #clear{ 
-    background-color: rgba(216,156,182,255);
+    background-color: rgba(96,38,63,255);
     color: white;
 }
 
