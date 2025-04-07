@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // select all the elemnts from the HTML and initialize the variables
     const display = document.getElementById("display");
     const buttons = document.querySelectorAll("button");
+    const numberButtons = document.querySelectorAll(".numberButton");
     const clearButton = document.getElementById("clear");
     const operatorButtons = document.querySelectorAll(".operator");
     const equalButton = document.getElementById("equalButton");
@@ -12,14 +13,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // add event listeners to the buttons
     // when a button is clicked, add the value to the display
-    buttons.forEach((button) => {
-        button.addEventListener("click", (event) => {
+    numberButtons.forEach((numberButton) => {
+        numberButton.addEventListener("click", (event) => {
             // if there is a message on the display, clear it
-            if (display.innerHTML === "Division by 0 is undefined!") {
+            if (display.innerHTML === "Division by 0 is undefined!" || display.innerHTML === "Error") {
                 display.innerHTML = ""; 
             }
             //add the value of the button to the display
-            display.innerHTML += button.innerHTML;
+            display.innerHTML += numberButton.innerHTML;
         });
     });
 
@@ -34,24 +35,41 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // when an operator button is clicked, get the first number and the operator
     operatorButtons.forEach((operatorButton) => {    
         operatorButton.addEventListener("click", (event) => {
-            // we need the ammount of characters to cut from the display to get the second number later
-            firstInputLength = display.innerHTML.length;
-            firstNumber = Number((display.innerHTML).slice(0, -1));
+            // we need the ammount of characters to cut from the display to get the second number later            
+            firstNumber = Number(display.innerHTML);
             console.log(firstNumber);
-            operator = operatorButton.innerHTML;            
+            operator = operatorButton.innerHTML;
+            display.innerHTML += operator;
+            console.log(operator);            
     });
     });
 
     // when the equal button is clicked, get the second number and call the operate function
     equalButton.addEventListener("click", (event) => {
-        secondNumber = Number(display.innerHTML.slice(firstInputLength + 1, -1));                  
-            display.innerHTML = operate(firstNumber, operator, secondNumber, display);
+        //define the second number as everything that comes after the operator
+        const operatorIndex = display.innerHTML.indexOf(operator);
+        let secondNumber = display.innerHTML.slice(operatorIndex + 1);
+        //validate the second number to check for errors
+        if (secondNumber.trim() === "" || isNaN(Number(secondNumber)) || isNaN(Number(firstNumber))) {
+            display.innerHTML = "Error"; //
+            console.log("Error: Invalid second number");
+            return; 
+        }
+        secondNumber = Number(secondNumber);
+        console.log(secondNumber);
+        try {
+            display.innerHTML = operate(firstNumber, operator, secondNumber);
+        }
+        catch(error){                       
+            display.innerHTML = "Error";    
+            console.log(error);
+        }
     })
 });
 
 
 
-function operate (firstNumber, operator, secondNumber, display) {
+function operate (firstNumber, operator, secondNumber) {
     switch (operator) {
         case '+':
             return firstNumber + secondNumber;
