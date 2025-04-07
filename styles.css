@@ -34,7 +34,6 @@ body{
     width: 95%;
     overflow: hidden;
     text-overflow: ellipsis;
-    direction: rtl;
     text-align: left;
     padding-left: 0.5em;
 }
